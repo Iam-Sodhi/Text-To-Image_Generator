@@ -9,5 +9,5 @@ Just Give a Prompt, See What it Can Do!
 Next.js, React.js, Hugging Face LLM, typescript, Tailwind CSS , shadcn-ui
 
 ## Deploymed On Vercel
- # Website Link: https://genuis-text-to-image.vercel.app/
+### Website Link: https://genuis-text-to-image.vercel.app/
 
