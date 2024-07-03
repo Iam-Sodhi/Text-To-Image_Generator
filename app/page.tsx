@@ -7,7 +7,7 @@ export default function Home() {
   const router =useRouter();
   useEffect(() => {
     // Check if the current URL is the root URL
-    router.push('/dashboard');
+    router.push('/image');
   }, [router]);
     return (
       <main >

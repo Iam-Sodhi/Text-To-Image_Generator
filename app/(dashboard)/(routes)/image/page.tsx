@@ -21,7 +21,6 @@ import Empty from "@/components/Empty";
 const PhotoPage = () => {
   const router = useRouter();
   const [output, setOutput] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,11 +33,9 @@ const PhotoPage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const token="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";
+    setOutput(null);
     try {
       const input = values.prompt;
-      setLoading(true);
-      // const result: any = await getImage({ prompt: input });
-      // setOutput(result.url);
       const response = await fetch(
         "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5",
         {
@@ -62,7 +59,6 @@ const PhotoPage = () => {
     } catch (error: any) {
       console.error("Error generating image: ", error);
     } finally {
-      setLoading(false);
       router.refresh();
     }
   };
@@ -125,7 +121,7 @@ const PhotoPage = () => {
         )}
         {!output && !isLoading && <Empty label="No images generated." />}
         {output && (
-          <div className="grid grid-cols-1 sm:grid-cols-3  gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-4 mt-8">
             <Card key={output} className="rounded-lg overflow-hidden">
               <div className="relative aspect-square">
                 <Image fill alt="Generated" src={output} />
