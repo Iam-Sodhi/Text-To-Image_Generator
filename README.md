@@ -8,5 +8,6 @@ Just Give a Prompt, See What it Can Do!
 ## TechStack Used:
 Next.js, React.js, Hugging Face LLM, typescript, Tailwind CSS , shadcn-ui
 
-## Deploy on Vercel
+## Deploymed On Vercel
+ # Website Link: https://genuis-text-to-image.vercel.app/
 
